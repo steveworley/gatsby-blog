@@ -2,13 +2,21 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import Index from '../src/pages/index'
 
-describe("Index", () => {
-  var stub = {
-    allMarkdownRemark: {
-      totalCount: 0,
-      edges: []
-    }
+jest.mock('../src/components/layout',  () => 'Layout')
+jest.mock('../src/components/blog/list', () => 'ListItem')
+
+const stub = {
+  allMarkdownRemark: {
+    totalCount: 1,
+    edges: [
+      { node: { id: 1, title: 'Blog stub', date: '01 Jan, 1970'  }}
+    ]
   }
-  const tree = renderer.create(<Index data={stub}/>).toJSON()
-  expect(tree).toMatchSnapshot();
+}
+
+describe("Index", () => {
+  it("renders correctly", () => {
+    const tree = renderer.create(<Index data={stub} />).toJSON()
+    expect(tree).toMatchSnapshot();
+  })
 })
