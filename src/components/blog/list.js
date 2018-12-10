@@ -10,7 +10,7 @@ export default (props) => {
       <Link to={post.fields.slug}>
         <h3 css={css`
           margin: ${rhythm(1/2)} 0 ${rhythm(1 / 4)} 0;
-        `}>{ post.frontmatter.title }</h3>
+        `}>{ post.title }</h3>
       </Link>
     </div>
   )

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Steve Worley - Technical Architect`,
+    title: `Steve Worley - Decoupled blog`,
   },
   plugins: [
     {
@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://live-contentacms.pantheonsite.io/`,
-        apiBase: `api`, // optional, defaults to `jsonapi`
+        baseUrl: `https://drupal-blog.herokuapp.com`,
+        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
       },
     },
     {
