@@ -5,7 +5,6 @@ os:
   - osx
 
 node_js:
-  - "node"
   - "8"
 
 script:
@@ -17,3 +16,7 @@ deploy:
   provider: surge
   project: './public'
   domain: steveworley.surge.sh
+
+brances:
+  only:
+    - master
