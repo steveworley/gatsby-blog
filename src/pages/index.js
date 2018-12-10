@@ -1,13 +1,16 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 import { rhythm } from "../utils/typography"
 
+import Layout from "../components/layout"
 import ListItem from "../components/blog/list"
 
 export default ({ data }) => {
+  const posts = data ? data.allMarkdownRemark.edges : []
+  const postCount = data ? data.allMarkdownRemark.totalCount : 0
+
   return (
     <Layout>
       <Helmet>
@@ -18,8 +21,8 @@ export default ({ data }) => {
       <div>
         <h4 css={css`
         margin: ${rhythm(1/2)} 0 ${rhythm(1 / 4)} 0;
-      `}>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+      `}>{postCount} Posts</h4>
+        {posts.map(({ node }) => (
           <ListItem key={node.id} node={node} />
         ))}
       </div>
