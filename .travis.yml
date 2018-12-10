@@ -10,4 +10,10 @@ node_js:
 
 script:
   - npm install
+  - gatsby build
   - npm run test
+
+deploy:
+  provider: surge
+  project: './public'
+  domain: steveworley.surge.sh

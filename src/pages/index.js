@@ -8,14 +8,14 @@ import Layout from "../components/layout"
 import ListItem from "../components/blog/list"
 
 export default ({ data }) => {
-  const posts = data ? data.allMarkdownRemark.edges : []
-  const postCount = data ? data.allMarkdownRemark.totalCount : 0
+  const posts = data ? data.allNodeBlog.edges : []
+  const postCount = data ? data.allNodeBlog.totalCount : 0
 
   return (
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Steve Worley - Technical Architect</title>
+        <title>Steve Worley - Decoupled blog</title>
         <link rel="canonical" href="http://steveworley.github.io" />
       </Helmet>
       <div>
@@ -23,7 +23,7 @@ export default ({ data }) => {
         margin: ${rhythm(1/2)} 0 ${rhythm(1 / 4)} 0;
       `}>{postCount} Posts</h4>
         {posts.map(({ node }) => (
-          <ListItem key={node.id} node={node} />
+          <ListItem key={node.nid} node={node} />
         ))}
       </div>
     </Layout>
@@ -32,19 +32,15 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allNodeBlog {
       totalCount
       edges {
         node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
+          title
+          nid
           fields {
             slug
           }
-          excerpt
         }
       }
     }
