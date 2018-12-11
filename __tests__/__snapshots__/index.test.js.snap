@@ -3,21 +3,6 @@
 exports[`Index renders correctly 1`] = `
 <Layout>
   <div>
-    <h4
-      css={
-        Object {
-          "map": undefined,
-          "name": "8nhk4w",
-          "next": undefined,
-          "styles": "
-        margin: 0.861rem 0 0.4305rem 0;
-      ",
-        }
-      }
-    >
-      1
-       Posts
-    </h4>
     <ListItem
       node={
         Object {

@@ -17,9 +17,9 @@ export default ({ data }) => {
         <link rel="canonical" href={"http://steveworley.github.io/" + post.fields.slug } />
       </Helmet>
       <div className={styles['post--content']}>
-        <p>{ post.relationships.field_tags.map(({name}) => {
+        <p>{ post.relationships.field_tags.map(({name, id}) => {
           const slug = `term/${slugify(name).toLowerCase()}`
-          return (<Link to={slug}>{name}</Link>)
+          return (<Link key={id} to={slug}>{name}</Link>)
         }) }</p>
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body.processed }} />
@@ -41,6 +41,7 @@ export const query = graphql`
       }
       relationships {
         field_tags {
+          id
           name
         }
       }
