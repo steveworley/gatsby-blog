@@ -1,7 +1,6 @@
 import Typography from "typography"
-import stowLakeTheme from 'typography-theme-stow-lake'
+import theme from 'typography-theme-github'
 
-const typography = new Typography(stowLakeTheme)
+const typography = new Typography(theme)
 
 export default typography
-export const rhythm = typography.rhythm

@@ -1,7 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
+import slugify from 'slugify'
+
+import styles from './blog-post.module.css'
 
 export default ({ data }) => {
   const post = data.nodeBlog;
@@ -13,10 +16,15 @@ export default ({ data }) => {
         <title>{ post.title } - Steve Worley</title>
         <link rel="canonical" href={"http://steveworley.github.io/" + post.fields.slug } />
       </Helmet>
-      <div>
+      <div className={styles['post--content']}>
+        <p>{ post.relationships.field_tags.map(({name}) => {
+          const slug = `term/${slugify(name).toLowerCase()}`
+          return (<Link to={slug}>{name}</Link>)
+        }) }</p>
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body.processed }} />
       </div>
+      <Link to="/">&laquo; Back</Link>
     </Layout>
   )
 }
@@ -30,6 +38,11 @@ export const query = graphql`
       }
       fields {
         slug
+      }
+      relationships {
+        field_tags {
+          name
+        }
       }
     }
   }

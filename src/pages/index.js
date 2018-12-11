@@ -5,7 +5,9 @@ import { Helmet } from "react-helmet"
 import { rhythm } from "../utils/typography"
 
 import Layout from "../components/layout"
-import ListItem from "../components/blog/list"
+import BlogListItem from "../components/blog/list"
+
+import styles from './index.module.css'
 
 export default ({ data }) => {
   const posts = data ? data.allNodeBlog.edges : []
@@ -19,11 +21,8 @@ export default ({ data }) => {
         <link rel="canonical" href="http://steveworley.github.io" />
       </Helmet>
       <div>
-        <h4 css={css`
-        margin: ${rhythm(1/2)} 0 ${rhythm(1 / 4)} 0;
-      `}>{postCount} Posts</h4>
         {posts.map(({ node }) => (
-          <ListItem key={node.nid} node={node} />
+          <BlogListItem key={node.nid} node={node} />
         ))}
       </div>
     </Layout>
@@ -38,6 +37,9 @@ export const query = graphql`
         node {
           title
           nid
+          body {
+            processed
+          }
           fields {
             slug
           }

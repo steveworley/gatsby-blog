@@ -1,43 +1,18 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { StaticQuery, Link, graphql } from "gatsby"
 
-import { rhythm } from "../utils/typography"
+import styles from './layout.module.css'
 
 export default ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-}
-    render={data => (
-      <div
-        css={css`
-          margin: 0 auto;
-          max-width: 840px;
-          padding: ${rhythm(2)};
-          padding-top: ${rhythm(0.5)};
-        `}
-      >
-        <Link to={`/`}>
-          <h3
-            css={css`
-              margin: ${rhythm(0.5)} 0;
-              display: inline-block;
-              font-style: normal;
-            `}
-          >
-            {data.site.siteMetadata.title}
-          </h3>
-        </Link>
+  <div className={styles.container}>
+    <div className={styles.logo}>
+      <h1>Steve Worley</h1>
+      <p>Decoupled blog with Gatsby+Drupal</p>
+    </div>
+    <div className={styles.layoutContainer}>
+      <div className={styles.content}>
         {children}
       </div>
-    )}
-  />
+    </div>
+  </div>
 )

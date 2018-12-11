@@ -1,16 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
-import { rhythm } from "../../utils/typography"
+
+import styles from './list.module.css'
 
 export default (props) => {
   const post = props.node
   return (
-    <div className="post--listing">
+    <div>
       <Link to={post.fields.slug}>
-        <h3 css={css`
-          margin: ${rhythm(1/2)} 0 ${rhythm(1 / 4)} 0;
-        `}>{ post.title }</h3>
+        <h3>{post.title}</h3>
       </Link>
     </div>
   )
