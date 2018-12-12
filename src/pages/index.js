@@ -22,7 +22,7 @@ export default ({ data }) => {
       </Helmet>
       <div>
         {posts.map(({ node }) => (
-          <BlogListItem key={node.nid} node={node} />
+          <BlogListItem key={node.id} node={node} />
         ))}
       </div>
     </Layout>
@@ -37,6 +37,7 @@ export const query = graphql`
         node {
           title
           nid
+          id
           body {
             processed
           }

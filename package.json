@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.4",
+    "axios": "^0.18.0",
     "circuit-ui": "git+https://github.com/sumup/circuit-ui.git#development-0.0.4",
     "emotion": "^10.0.4",
     "emotion-server": "^10.0.4",

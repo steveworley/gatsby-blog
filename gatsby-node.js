@@ -8,6 +8,7 @@
 
 const fs = require('fs')
 const glob = require('glob')
+const axios = require('axios')
 
 /**
  * Extend and transform assets as they're created.
@@ -59,7 +60,7 @@ exports.createPages = ({graphql, actions}) => {
   for (var i = 0; i < files.length; i++) {
     callback = require(files[i])
     promises.push(callback(graphql, actions))
-    console.info(`[createPagers]: Build for ${files[i]}`)
+    console.info(`[createPages]: Build for ${files[i]}`)
   }
 
   return Promise.all(promises)

@@ -12,6 +12,7 @@ module.exports = (graphql, actions) => {
           edges{
             node{
               nid
+              id
               fields {
                 slug
               }
@@ -25,7 +26,14 @@ module.exports = (graphql, actions) => {
           path: node.fields.slug,
           component: path.resolve('./src/templates/blog-post.js'),
           context: {
-            nid: node.nid
+            nid: node.nid,
+            filter: {
+              relationships: {
+                entity_id: {
+                  id: { eq: node.id }
+                }
+              }
+            }
           }
         })
       })
