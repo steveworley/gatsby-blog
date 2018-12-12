@@ -1,17 +1,12 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import { rhythm } from "../utils/typography"
 
 import Layout from "../components/layout"
 import BlogListItem from "../components/blog/list"
 
-import styles from './index.module.css'
-
 export default ({ data }) => {
   const posts = data ? data.allNodeBlog.edges : []
-  const postCount = data ? data.allNodeBlog.totalCount : 0
 
   return (
     <Layout>

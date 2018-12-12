@@ -1,8 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import styles from './list.module.css'
-
 export default (props) => {
   const post = props.node
   return (
