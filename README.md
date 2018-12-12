@@ -1,12 +1,10 @@
-# gatsby-starter-hello-world
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site.
+# Decoupled Drupal Blog
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-```
-
-Or [view the live demo here](https://gatsby-starter-hello-world-demo.netlify.com/).
+A blog using [Drupal](https://www.drupal.org/) as a data provider and [Gatsby](https://www.gatsbyjs.org/).
 
 ## Running in development
-`gatsby develop`
+
+```
+npm install
+gatsby develop
+```
