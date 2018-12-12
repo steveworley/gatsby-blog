@@ -23,7 +23,7 @@ class BlogPost extends Component {
         </div>
         <div className={styles.postComments}>
           { comments.map(({node}) => (
-            <div className={styles.postComment}>
+            <div key={node.id} className={styles.postComment}>
               <h3 className={styles.postCommentTitle}>{ node.subject }</h3>
               <div dangerouslySetInnerHTML={{ __html: node.comment_body.processed }} />
             </div>
@@ -51,6 +51,9 @@ export const query = graphql`
         field_tags {
           id
           name
+          fields {
+            slug
+          }
         }
       }
     }
@@ -62,7 +65,7 @@ export const query = graphql`
           comment_body{
             processed
           }
-          subject
+          id
           relationships{
             entity_id{
               id

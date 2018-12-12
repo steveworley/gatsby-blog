@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Taxonomy Term renders correctly with posts 1`] = `
+<Layout>
+  <div>
+    <h2>
+      Showing posts tagged with: 
+      <em>
+        CSS
+      </em>
+    </h2>
+    <div>
+      <a
+        href="youtube-z-index-fix"
+      >
+        <h3>
+          Youtube z-index fix
+        </h3>
+      </a>
+    </div>
+    <div>
+      <a
+        href="css-attribute-selectors"
+      >
+        <h3>
+          CSS attribute Selectors
+        </h3>
+      </a>
+    </div>
+  </div>
+</Layout>
+`;
+
+exports[`Taxonomy Term renders correctly without posts 1`] = `
+<Layout>
+  <div>
+    <h2>
+      Showing posts tagged with: 
+      <em>
+        Youtube
+      </em>
+    </h2>
+  </div>
+</Layout>
+`;

@@ -6,7 +6,7 @@ import ListItem from "../components/blog/list"
 
 export default ({ data }) => {
   const term = data.taxonomyTermTags
-  const posts = data.allNodeBlog.edges;
+  const posts = data.allNodeBlog ? data.allNodeBlog.edges : [];
 
   return (
     <Layout>
