@@ -3,15 +3,63 @@
 exports[`Blog post renders correctly with comments 1`] = `
 <Layout>
   <div
-    className="post--content"
+    id="main"
   >
-    <h1>
-      Youtube z-index fix
-    </h1>
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>Flash appearing behind elements is a common problem with a relatively simple fix — simply add wmode=transparent to the object tag and your Flash movie will behave nicely with the CSS z-index property.</p>
+    <section
+      id="one"
+    >
+      <ul
+        className="actions"
+      >
+        <li>
+          <a
+            href="/"
+          >
+            « Home
+          </a>
+        </li>
+      </ul>
+      <h1>
+        Youtube z-index fix
+      </h1>
+      <div>
+        <ul
+          className="actions"
+        >
+          <li>
+            <a
+              href="term/css"
+            >
+              CSS
+            </a>
+          </li>
+          <li>
+            <a
+              href="term/youtube"
+            >
+              Youtube
+            </a>
+          </li>
+          <li>
+            <a
+              href="term/flash"
+            >
+              Flash
+            </a>
+          </li>
+          <li>
+            <a
+              href="term/website-design"
+            >
+              Website design
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Flash appearing behind elements is a common problem with a relatively simple fix — simply add wmode=transparent to the object tag and your Flash movie will behave nicely with the CSS z-index property.</p>
 
 <p>But what happens when you embed a YouTube video?</p>
 
@@ -27,46 +75,37 @@ exports[`Blog post renders correctly with comments 1`] = `
 
 <pre><code>&lt;iframe width=\\"420\\" height=\\"315\\" src=\\"http://www.youtube.com/embed/C4I84Gy-cPI?wmode=transparent\\" frameborder=\\"0\\" allowfullscreen&gt;</code></pre>
 ",
+          }
         }
-      }
-    />
-  </div>
-  <div
-    className="postComments"
-  >
-    <div
-      className="postComment"
-    >
-      <h3
-        className="postCommentTitle"
-      >
-        Test
-      </h3>
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>This is a test comment.</p>
+      />
+      <div>
+        <div>
+          <h3>
+            Test
+          </h3>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>This is a test comment.</p>
 ",
-          }
-        }
-      />
-    </div>
-    <div
-      className="postComment"
-    >
-      <h3
-        className="postCommentTitle"
-      >
-        Second comment!
-      </h3>
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "#2!",
-          }
-        }
-      />
-    </div>
+              }
+            }
+          />
+        </div>
+        <div>
+          <h3>
+            Second comment!
+          </h3>
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "#2!",
+              }
+            }
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </Layout>
 `;
@@ -74,15 +113,56 @@ exports[`Blog post renders correctly with comments 1`] = `
 exports[`Blog post renders correctly without comments 1`] = `
 <Layout>
   <div
-    className="post--content"
+    id="main"
   >
-    <h1>
-      CSS attribute Selectors
-    </h1>
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>An interesting and somewhat unused feature of CSS is that it allows you to target elements based on the attributes of those elements. You are probably familiar with the more common ones; like type when trying to select different forms of input elements, however you can actually target quite a few other attributes in this way, modern browsers will allow you to select any attribute name however it will only work in \`IE7\` and \`IE8\` if a \`!DOCTYPE\` is specified. You can also use operational selectors (not just equals) similar to jQuery. These operators include:</p>
+    <section
+      id="one"
+    >
+      <ul
+        className="actions"
+      >
+        <li>
+          <a
+            href="/"
+          >
+            « Home
+          </a>
+        </li>
+      </ul>
+      <h1>
+        CSS attribute Selectors
+      </h1>
+      <div>
+        <ul
+          className="actions"
+        >
+          <li>
+            <a
+              href="term/attribute-selectors"
+            >
+              Attribute selectors
+            </a>
+          </li>
+          <li>
+            <a
+              href="term/advanced-css-selectors"
+            >
+              Advanced CSS Selectors
+            </a>
+          </li>
+          <li>
+            <a
+              href="term/css"
+            >
+              CSS
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>An interesting and somewhat unused feature of CSS is that it allows you to target elements based on the attributes of those elements. You are probably familiar with the more common ones; like type when trying to select different forms of input elements, however you can actually target quite a few other attributes in this way, modern browsers will allow you to select any attribute name however it will only work in \`IE7\` and \`IE8\` if a \`!DOCTYPE\` is specified. You can also use operational selectors (not just equals) similar to jQuery. These operators include:</p>
 
 <ul><li>*= contains</li>
 	<li>~= contains word</li>
@@ -113,12 +193,11 @@ iframe[name=\\"google_conversion_tracking\\"] {
 }
 </code></pre>
 ",
+          }
         }
-      }
-    />
+      />
+      <div />
+    </section>
   </div>
-  <div
-    className="postComments"
-  />
 </Layout>
 `;

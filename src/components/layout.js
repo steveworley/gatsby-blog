@@ -1,17 +1,20 @@
 import React from "react"
 
-import styles from './layout.module.css'
+import Header from './Header'
 
-export default ({ children }) => (
-  <div className={styles.container}>
-    <div className={styles.logo}>
-      <h1>Steve Worley</h1>
-      <p>Decoupled blog with Gatsby+Drupal</p>
-    </div>
-    <div className={styles.layoutContainer}>
-      <div className={styles.content}>
+import '../assets/scss/main.scss'
+
+class Template extends React.Component {
+  render() {
+    const { children } = this.props
+
+    return (
+      <div>
+        <Header />
         {children}
       </div>
-    </div>
-  </div>
-)
+    )
+  }
+}
+
+export default Template

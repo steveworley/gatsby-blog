@@ -2,44 +2,81 @@
 
 exports[`Taxonomy Term renders correctly with posts 1`] = `
 <Layout>
-  <div>
-    <h2>
-      Showing posts tagged with: 
-      <em>
-        CSS
-      </em>
-    </h2>
-    <div>
-      <a
-        href="youtube-z-index-fix"
+  <div
+    id="main"
+  >
+    <section
+      id="one"
+    >
+      <ul
+        className="actions"
       >
-        <h3>
-          Youtube z-index fix
-        </h3>
-      </a>
-    </div>
-    <div>
-      <a
-        href="css-attribute-selectors"
+        <li>
+          <a
+            href="/"
+          >
+            « Home
+          </a>
+        </li>
+      </ul>
+      <h2>
+        Showing posts tagged with: 
+        <em>
+          CSS
+        </em>
+      </h2>
+      <ul
+        className="actions"
       >
-        <h3>
-          CSS attribute Selectors
-        </h3>
-      </a>
-    </div>
+        <li>
+          <a
+            href="youtube-z-index-fix"
+          >
+            Youtube z-index fix
+          </a>
+        </li>
+        <li>
+          <a
+            href="css-attribute-selectors"
+          >
+            CSS attribute Selectors
+          </a>
+        </li>
+      </ul>
+    </section>
   </div>
 </Layout>
 `;
 
 exports[`Taxonomy Term renders correctly without posts 1`] = `
 <Layout>
-  <div>
-    <h2>
-      Showing posts tagged with: 
-      <em>
-        Youtube
-      </em>
-    </h2>
+  <div
+    id="main"
+  >
+    <section
+      id="one"
+    >
+      <ul
+        className="actions"
+      >
+        <li>
+          <a
+            href="/"
+          >
+            « Home
+          </a>
+        </li>
+      </ul>
+      <h2>
+        Showing posts tagged with: 
+        <em>
+          Youtube
+        </em>
+      </h2>
+      <ul
+        className="actions"
+      />
+    </section>
   </div>
 </Layout>
 `;

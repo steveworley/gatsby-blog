@@ -4,12 +4,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`,
-      },
-    },
-    {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: `https://drupal-blog.herokuapp.com`,
@@ -19,15 +13,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
+        name: "Steve Worley Blog",
+        short_name: "steveworley",
         start_url: "/",
         background_color: "#6b37bf",
         theme_color: "#6b37bf",
         display: "minimal-ui",
-        icon: "src/images/icon.png", // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-sass',
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`
   ],
