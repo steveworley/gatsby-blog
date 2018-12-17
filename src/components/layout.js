@@ -4,6 +4,10 @@ import Header from './header'
 
 import '../assets/scss/main.scss'
 
+// Import prism for syntax highlighting.
+import Prism from 'prismjs'
+Prism.highlightAll()
+
 class Template extends React.Component {
   render() {
     const { children } = this.props

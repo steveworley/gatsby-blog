@@ -1,3 +1,8 @@
+require('dotenv').config({
+  "path": `.env.${process.env.NODE_ENV}`
+})
+
+
 module.exports = {
   siteMetadata: {
     title: `Steve Worley - Decoupled blog`,
@@ -6,7 +11,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://drupal-blog.herokuapp.com`,
+        baseUrl: process.env.GATSBY_API_URL,
         apiBase: `jsonapi`, // optional, defaults to `jsonapi`
       },
     },
