@@ -6,7 +6,10 @@ import '../assets/scss/main.scss'
 
 // Import prism for syntax highlighting.
 import Prism from 'prismjs'
-Prism.highlightAll()
+
+if (typeof window !== `undefined` && typeof window.document !== `undefined`) {
+  Prism.highlightAll()
+}
 
 class Template extends React.Component {
   render() {
