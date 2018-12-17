@@ -45,7 +45,7 @@ class BlogPost extends Component {
 export default BlogPost
 
 export const query = graphql`
-  query($nid: Int!, $filter: filterCommentComment) {
+  query($nid: Int!) {
     nodeBlog(nid: { eq: $nid } ) {
       title
       nid
@@ -61,23 +61,6 @@ export const query = graphql`
           name
           fields {
             slug
-          }
-        }
-      }
-    }
-    allCommentComment(filter:$filter){
-      totalCount
-      edges{
-        node{
-          subject
-          comment_body{
-            processed
-          }
-          id
-          relationships{
-            entity_id{
-              id
-            }
           }
         }
       }
